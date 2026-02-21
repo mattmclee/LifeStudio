@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡ LifeForge
 
-## Getting Started
+**LifeForge** is a premium, AI-powered life planning application designed to bridge the gap between goal setting and daily execution. It combines the structured scheduling of **Microsoft Outlook** with the research-backed intelligence of **NotebookLM**.
 
-First, run the development server:
+![LifeForge Dashboard Preview](https://github.com/mattmclee/LifeFroge/raw/main/public/preview-placeholder.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **🎯 Goal-Based Planning**: templates curated for your specific life stage (Student, Professional, Retiree, etc.).
+- **📅 Smart Scheduling Engine**: 
+  - **Backward Scheduling**: Automatic planning for deadlines and exams.
+  - **Skill Learning**: Progressive training paths with integrated reviews.
+  - **Health & Finance**: Categorized scheduling for workout splits and financial checkpoints.
+- **🔬 Research & Suggestions**: A discovery module that provides AI-generated action items and summaries for your goals.
+- **🎨 Premium Visuals**: 5 beautiful, built-in themes (Midnight, Light, Ocean, Forest, Sunset) with glassmorphism effects.
+- **📱 Responsive Design**: Fully functional across desktop and tablet views.
+- **🔒 Local-First**: Your data stays in your browser via `localStorage` for immediate speed and privacy.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
 
-## Learn More
+- **Node.js**: v16.14.2 or higher (Optimized for v16-v20)
+- **npm**: v8 or higher
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mattmclee/LifeFroge.git
+   cd LifeFroge
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 13.5.6](https://nextjs.org/)
+- **State Management**: React Context API
+- **Styling**: Vanilla CSS (Custom Design System)
+- **Icons**: [Lucide React](https://lucide.dev/)
+
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+Built with ❤️ by Antigravity
