@@ -34,7 +34,7 @@ export default function AIAnchoredBar() {
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [suggestions, setSuggestions] = useState([]);
     const [lastAdded, setLastAdded] = useState(null);
-    const { goalDispatch } = useGoals();
+    const { dispatch: goalDispatch } = useGoals();
     const { dispatch: calendarDispatch } = useCalendar();
     const inputRef = useRef(null);
 
