@@ -1,4 +1,4 @@
-/* ===== LifeForge Design System ===== */
+/* ===== Life Studio Design System ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* ---------- Theme Variables ---------- */
@@ -124,7 +124,9 @@
 }
 
 /* ---------- Reset & Base ---------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -145,8 +147,14 @@ body {
   overflow: hidden;
 }
 
-a { color: var(--accent-primary); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 /* ---------- Layout ---------- */
 .app-layout {
@@ -172,8 +180,14 @@ a:hover { text-decoration: underline; }
   scrollbar-color: var(--accent-primary) transparent;
 }
 
-.page-content::-webkit-scrollbar { width: 6px; }
-.page-content::-webkit-scrollbar-track { background: transparent; }
+.page-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.page-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .page-content::-webkit-scrollbar-thumb {
   background: var(--accent-primary);
   border-radius: 3px;
@@ -357,7 +371,10 @@ a:hover { text-decoration: underline; }
   border-color: var(--accent-primary);
 }
 
-.header-btn svg { width: 18px; height: 18px; }
+.header-btn svg {
+  width: 18px;
+  height: 18px;
+}
 
 .sync-indicator {
   display: flex;
@@ -380,8 +397,15 @@ a:hover { text-decoration: underline; }
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
 }
 
 /* ---------- Cards ---------- */
@@ -498,10 +522,25 @@ a:hover { text-decoration: underline; }
   letter-spacing: 0.5px;
 }
 
-.badge-study { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
-.badge-health { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
-.badge-finance { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
-.badge-career { background: rgba(236, 72, 153, 0.15); color: #f472b6; }
+.badge-study {
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+}
+
+.badge-health {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.badge-finance {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+}
+
+.badge-career {
+  background: rgba(236, 72, 153, 0.15);
+  color: #f472b6;
+}
 
 /* ---------- Section Headings ---------- */
 .section-header {
@@ -543,17 +582,34 @@ a:hover { text-decoration: underline; }
 }
 
 @media (max-width: 1200px) {
-  .grid-4 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 900px) {
-  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .sidebar { transform: translateX(-100%); }
-  .main-area { margin-left: 0; }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .main-area {
+    margin-left: 0;
+  }
 }
 
 /* ---------- Modal / Overlay ---------- */
@@ -581,13 +637,25 @@ a:hover { text-decoration: underline; }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ---------- Tabs ---------- */
@@ -638,7 +706,8 @@ a:hover { text-decoration: underline; }
   letter-spacing: 0.3px;
 }
 
-.form-input, .form-select {
+.form-input,
+.form-select {
   width: 100%;
   padding: 10px 14px;
   background: var(--bg-input);
@@ -651,7 +720,8 @@ a:hover { text-decoration: underline; }
   outline: none;
 }
 
-.form-input:focus, .form-select:focus {
+.form-input:focus,
+.form-select:focus {
   border-color: var(--accent-primary);
   box-shadow: 0 0 0 3px var(--accent-glow);
 }
@@ -718,12 +788,12 @@ a:hover { text-decoration: underline; }
   transition: all 0.3s;
 }
 
-.toggle input:checked + .toggle-slider {
+.toggle input:checked+.toggle-slider {
   background: var(--accent-primary);
   border-color: var(--accent-primary);
 }
 
-.toggle input:checked + .toggle-slider::before {
+.toggle input:checked+.toggle-slider::before {
   transform: translateX(20px);
   background: #fff;
 }
@@ -800,10 +870,25 @@ a:hover { text-decoration: underline; }
   transform: scale(1.02);
 }
 
-.calendar-event.study { background: rgba(99, 102, 241, 0.2); color: #a5b4fc; }
-.calendar-event.health { background: rgba(34, 197, 94, 0.2); color: #86efac; }
-.calendar-event.finance { background: rgba(245, 158, 11, 0.2); color: #fde68a; }
-.calendar-event.career { background: rgba(236, 72, 153, 0.2); color: #f9a8d4; }
+.calendar-event.study {
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+}
+
+.calendar-event.health {
+  background: rgba(34, 197, 94, 0.2);
+  color: #86efac;
+}
+
+.calendar-event.finance {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fde68a;
+}
+
+.calendar-event.career {
+  background: rgba(236, 72, 153, 0.2);
+  color: #f9a8d4;
+}
 
 /* ---------- Week View ---------- */
 .week-view {
@@ -991,7 +1076,9 @@ a:hover { text-decoration: underline; }
 }
 
 @media (max-width: 900px) {
-  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ---------- Emoji Picker ---------- */
@@ -1115,7 +1202,8 @@ a:hover { text-decoration: underline; }
   transition: all 0.2s;
 }
 
-.search-result-card:hover, .search-result-card.active {
+.search-result-card:hover,
+.search-result-card.active {
   border-color: var(--accent-primary);
   background: var(--bg-hover);
 }
@@ -1257,8 +1345,13 @@ a:hover { text-decoration: underline; }
 
 /* ---------- Animations ---------- */
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .skeleton {
@@ -1269,8 +1362,15 @@ a:hover { text-decoration: underline; }
 }
 
 @keyframes slideInRight {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .animate-in {

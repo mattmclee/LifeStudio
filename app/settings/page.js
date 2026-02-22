@@ -114,7 +114,7 @@ export default function SettingsPage() {
                     ⚙️ Settings
                 </h1>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                    Personalize your LifeForge experience.
+                    Personalize your Life Studio experience.
                 </p>
             </div>
 

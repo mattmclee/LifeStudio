@@ -1,8 +1,8 @@
-# ⚡ LifeForge
+# ⚡ Life Studio
 
-**LifeForge** is a premium, AI-powered life planning application designed to bridge the gap between goal setting and daily execution. It combines the structured scheduling of **Microsoft Outlook** with the research-backed intelligence of **NotebookLM**.
+**Life Studio** is a premium, AI-powered life planning application designed to bridge the gap between goal setting and daily execution. It combines the structured scheduling of **Microsoft Outlook** with the research-backed intelligence of **NotebookLM**.
 
-![LifeForge Dashboard Preview](https://github.com/mattmclee/LifeFroge/raw/main/public/preview-placeholder.png)
+![Life Studio Dashboard Preview](https://github.com/mattmclee/LifeFroge/raw/main/public/preview-placeholder.png)
 
 ## ✨ Features
 

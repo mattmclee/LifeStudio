@@ -25,7 +25,7 @@ export default function Sidebar() {
     return (
         <aside className="sidebar">
             <div className="sidebar-brand">
-                <h1>⚡ LifeForge</h1>
+                <h1>⚡ Life Studio</h1>
                 <p>Goal-Driven Life Planner</p>
             </div>
 

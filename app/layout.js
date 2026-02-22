@@ -6,7 +6,7 @@ import Sidebar from '@/components/layout/Sidebar';
 import Header from '@/components/layout/Header';
 
 export const metadata = {
-  title: 'LifeForge — Goal-Driven Life Planner',
+  title: 'Life Studio — Goal-Driven Life Planner',
   description: 'Plan your life with smart scheduling, research-backed suggestions, and calendar integration. Cover studies, health, finances, and career goals.',
 };
 
