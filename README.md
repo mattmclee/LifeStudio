@@ -2,7 +2,7 @@
 
 **Life Studio** is a premium, AI-powered life planning application designed to bridge the gap between goal setting and daily execution. It combines the structured scheduling of **Microsoft Outlook** with the research-backed intelligence of **NotebookLM**.
 
-![Life Studio Dashboard Preview](https://github.com/mattmclee/LifeFroge/raw/main/public/preview-placeholder.png)
+![Life Studio Dashboard Preview](https://github.com/mattmclee/LifeStudio/raw/main/public/preview-placeholder.png)
 
 ## ✨ Features
 
@@ -27,7 +27,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/mattmclee/LifeFroge.git
+   git clone https://github.com/mattmclee/LifeStudio.git
    cd LifeFroge
    ```
 
