@@ -38,7 +38,7 @@ export default function ResearchPage() {
                 payload: {
                     id: uid,
                     goalId: selectedGoal.id,
-                    title: `${selectedGoal.customEmoji || '📝'} ${sug.title}`,
+                    title: `${selectedGoal.customEmoji || '📝'} ${selectedGoal.title} : ${sug.title}`,
                     date: tomorrow.toISOString().split('T')[0],
                     startHour: 10,
                     duration: sug.timeAdded || 1,

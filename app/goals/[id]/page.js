@@ -59,7 +59,7 @@ export default function GoalDetailPage() {
                 payload: {
                     id: uid,
                     goalId: goal.id,
-                    title: `${goal.customEmoji || cat?.emoji || '📝'} ${suggestion.title}`,
+                    title: `${goal.customEmoji || cat?.emoji || '📝'} ${goal.title} : ${suggestion.title}`,
                     date: tomorrow.toISOString().split('T')[0],
                     startHour: 10,
                     duration: suggestion.timeAdded,
