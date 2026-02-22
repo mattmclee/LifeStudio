@@ -14,8 +14,18 @@ export default function GoalsPage() {
     const [selectedStage, setSelectedStage] = useState(goalState.lifeStage || null);
     const [addedGoalIds, setAddedGoalIds] = useState(new Set(goalState.goals.map(g => g.id)));
     const [showScheduleModal, setShowScheduleModal] = useState(null);
+    const [showCustomModal, setShowCustomModal] = useState(false);
     const [targetDate, setTargetDate] = useState('');
     const [weeklyHours, setWeeklyHours] = useState(10);
+
+    // Custom goal form state
+    const [customGoal, setCustomGoal] = useState({
+        title: '',
+        description: '',
+        category: 'study',
+        estimatedHours: 40,
+        emoji: '🎯'
+    });
 
     const activeGoals = goalState.goals || [];
     const templates = selectedStage ? GOAL_TEMPLATES[selectedStage] || [] : [];
@@ -32,6 +42,23 @@ export default function GoalsPage() {
         target.setMonth(target.getMonth() + 3);
         setTargetDate(target.toISOString().split('T')[0]);
         setWeeklyHours(template.defaultWeeklyHours || 10);
+    }
+
+    function handleCreateCustomGoal() {
+        // Just switch to the schedule modal with the custom goal data
+        const id = 'custom-' + Date.now().toString(36);
+        const template = {
+            id,
+            ...customGoal,
+            milestones: [
+                { title: 'Foundation', percent: 25 },
+                { title: 'Core Progress', percent: 50 },
+                { title: 'Advanced Practice', percent: 75 },
+                { title: 'Goal Achieved', percent: 100 }
+            ]
+        };
+        setShowCustomModal(false);
+        handleAddGoal(template);
     }
 
     function confirmAddGoal() {
@@ -69,13 +96,18 @@ export default function GoalsPage() {
 
     return (
         <div className="animate-in">
-            <div style={{ marginBottom: 28 }}>
-                <h1 style={{ fontSize: '1.6rem', fontWeight: 800, letterSpacing: '-0.5px', marginBottom: 4 }}>
-                    🎯 Goals
-                </h1>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                    Select your life stage, then pick goals to automatically schedule a plan.
-                </p>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 28 }}>
+                <div>
+                    <h1 style={{ fontSize: '1.6rem', fontWeight: 800, letterSpacing: '-0.5px', marginBottom: 4 }}>
+                        🎯 Goals
+                    </h1>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+                        Select your life stage, pick goals, or create your own custom plan.
+                    </p>
+                </div>
+                <button className="btn btn-primary" onClick={() => setShowCustomModal(true)}>
+                    <Plus style={{ width: 16, height: 16 }} /> Create Custom Goal
+                </button>
             </div>
 
             {/* Life Stage Selector */}
@@ -174,6 +206,77 @@ export default function GoalsPage() {
                     <div className="empty-state-icon">👆</div>
                     <h3>Select a life stage above</h3>
                     <p>We&apos;ll show you recommended goals with smart scheduling suggestions based on your life stage.</p>
+                </div>
+            )}
+
+            {/* Custom Goal Modal */}
+            {showCustomModal && (
+                <div className="modal-overlay" onClick={() => setShowCustomModal(false)}>
+                    <div className="modal" onClick={e => e.stopPropagation()}>
+                        <h2 style={{ marginBottom: 4, fontSize: '1.15rem' }}>✨ Create Custom Goal</h2>
+                        <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: 20 }}>
+                            Enter the details for your personalized goal.
+                        </p>
+
+                        <div className="form-group">
+                            <label className="form-label">Goal Title</label>
+                            <input
+                                type="text"
+                                className="form-input"
+                                placeholder="e.g. Learn Piano, Write a Book..."
+                                value={customGoal.title}
+                                onChange={e => setCustomGoal({ ...customGoal, title: e.target.value })}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <label className="form-label">Description</label>
+                            <textarea
+                                className="form-input"
+                                style={{ minHeight: 80, resize: 'vertical' }}
+                                placeholder="Describe your objective..."
+                                value={customGoal.description}
+                                onChange={e => setCustomGoal({ ...customGoal, description: e.target.value })}
+                            />
+                        </div>
+
+                        <div className="grid-2">
+                            <div className="form-group">
+                                <label className="form-label">Category</label>
+                                <select
+                                    className="form-input"
+                                    value={customGoal.category}
+                                    onChange={e => setCustomGoal({ ...customGoal, category: e.target.value })}
+                                >
+                                    {Object.entries(GOAL_CATEGORIES).map(([id, cat]) => (
+                                        <option key={id} value={id}>{cat.label}</option>
+                                    ))}
+                                </select>
+                            </div>
+                            <div className="form-group">
+                                <label className="form-label">Total Est. Hours</label>
+                                <input
+                                    type="number"
+                                    className="form-input"
+                                    value={customGoal.estimatedHours}
+                                    onChange={e => setCustomGoal({ ...customGoal, estimatedHours: Number(e.target.value) })}
+                                />
+                            </div>
+                        </div>
+
+                        <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end', marginTop: 10 }}>
+                            <button className="btn btn-secondary" onClick={() => setShowCustomModal(false)}>
+                                Cancel
+                            </button>
+                            <button
+                                className="btn btn-primary"
+                                onClick={handleCreateCustomGoal}
+                                disabled={!customGoal.title}
+                            >
+                                Next: Schedule <ChevronRight style={{ width: 14, height: 14 }} />
+                            </button>
+                        </div>
+                    </div>
                 </div>
             )}
 
