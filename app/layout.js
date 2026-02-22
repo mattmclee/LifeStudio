@@ -4,6 +4,7 @@ import { GoalProvider } from '@/contexts/GoalContext';
 import { CalendarProvider } from '@/contexts/CalendarContext';
 import Sidebar from '@/components/layout/Sidebar';
 import Header from '@/components/layout/Header';
+import AIAnchoredBar from '@/components/layout/AIAnchoredBar';
 
 export const metadata = {
   title: 'Life Studio — Goal-Driven Life Planner',
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
                   <main className="page-content">
                     {children}
                   </main>
+                  <AIAnchoredBar />
                 </div>
               </div>
             </CalendarProvider>
